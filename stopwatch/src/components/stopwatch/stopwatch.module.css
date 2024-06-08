@@ -1,0 +1,15 @@
+.stopwatch {
+  background-color: #fff;
+  /* max-width: 600px; */
+  width: 600px;
+  border-radius: 15px;
+  padding: 40px 40px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.header {
+  display: flex;
+  border: 1px solid red;
+  align-items: center;
+  justify-content: center;
+}

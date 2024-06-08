@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState } from 'react';
 import styles from './stopwatch.module.css';
 import start from '../../assets/icons/play.svg';
 import pause from '../../assets/icons/pause.svg';
@@ -34,14 +34,6 @@ const Stopwatch = () => {
     return () => clearInterval(interval);
   }, [isRunning, mins, seconds, hours]);
 
-  const handleStartClick = () => {
-    setIsRunning(true);
-  };
-
-  const handleStopClick = () => {
-    setIsRunning(false);
-  };
-
   const onRefreshClick = () => {
     setHours(0);
     setMins(0);
@@ -68,13 +60,13 @@ const Stopwatch = () => {
             className={styles.start}
             src={start as unknown as string}
             alt="start"
-            onClick={handleStartClick}
+            onClick={() => setIsRunning(true)}
           />
           <img
             className={styles.stop}
             src={pause as unknown as string}
             alt="stop"
-            onClick={handleStopClick}
+            onClick={() => setIsRunning(false)}
           />
         </div>
       </div>

@@ -15,10 +15,7 @@ interface StopwatchState {
 //В дженерик типы пропсов
 class Stopwatch extends React.Component<{}, StopwatchState> {
   interval: NodeJS.Timeout | null = null;
-  // const [seconds, setSeconds] = useState<number>(0);
-  // const [mins, setMins] = useState<number>(0);
-  // const [hours, setHours] = useState<number>(0);
-  // const [isRunning, setIsRunning] = useState<boolean>(false);
+
   constructor(props: {}) {
     super(props);
 
@@ -30,45 +27,14 @@ class Stopwatch extends React.Component<{}, StopwatchState> {
     };
   }
 
-  // useEffect(() => {
-  //   let interval: NodeJS.Timeout;
-
-  //   if (isRunning) {
-  //     interval = setInterval(() => {
-  //       setSeconds((prevSeconds) => {
-  //         if (prevSeconds === 59) {
-  //           setMins((prevMins) => {
-  //             if (prevMins === 59) {
-  //               setHours((prevHours) => prevHours + 1);
-  //               return 0;
-  //             }
-  //             return prevMins + 1;
-  //           });
-  //           return 0;
-  //         }
-  //         return prevSeconds + 1;
-  //       });
-  //     }, 1000);
-  //   }
-
-  //   return () => clearInterval(interval);
-  // }, [isRunning, mins, seconds, hours]);
-
-  // const onRefreshClick = () => {
-  //   setHours(0);
-  //   setMins(0);
-  //   setSeconds(0);
-  //   setIsRunning(false);
-  // };
-
-  handleRefresh = () => {
+  handleRefresh() {
     this.setState({
       seconds: 0,
       mins: 0,
       hours: 0,
       isRunning: false,
     });
-  };
+  }
 
   handleStartRunning = () => {
     this.setState({

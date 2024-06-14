@@ -27,14 +27,14 @@ class Stopwatch extends React.Component<{}, StopwatchState> {
     };
   }
 
-  handleRefresh() {
+  handleRefresh = () => {
     this.setState({
       seconds: 0,
       mins: 0,
       hours: 0,
       isRunning: false,
     });
-  }
+  };
 
   handleStartRunning = () => {
     this.setState({
